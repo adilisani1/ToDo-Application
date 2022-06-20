@@ -1,64 +1,23 @@
-import './App.css';
-import { useState } from 'react';
+import React from 'react'
+
+import Navbar from './components/navbar';
+import TodoApp from './components/TodoApp'
 
 
 function App() {
 
-  const [todos, setTodo] = useState([
-    {
-
-      id: 1,
-      title: 'Finish React Series',
-      isComplete: false,
-
-    },
-    {
-
-      id: 2,
-      title: 'Go Grocery',
-      isComplete: true,
-
-    },
-    {
-
-      id: 3,
-      title: 'Take over world',
-      isComplete: false,
-
-    },
-  ])
-
   return (
-    <div className="container mt-5">
-      <div className="col-12 col-lg-6 align-items-center justify-content-center">
-        <h2>Todo App</h2>
-        <form onSubmit="#">
-          <input type="text" className="form-control" placeholder="What do you need to do?" />
-        </form>
-        <table class="table">
-          <tbody>
+    <React.Fragment>
+      <Navbar />
+      <div className="container mt-5">
+        <div className="row align-items-center justify-content-center">
+          <TodoApp />
+        </div>
 
-            {todos.map(todo => (
-              <tr>
-                <td>
-                  {todo.title}
-                </td>
-                <td><button type="button" class="btn-close btn-sm" aria-label="Close"></button></td>
-              </tr>
-            ))}
-
-
-
-
-
-
-
-
-          </tbody>
-        </table>
       </div>
 
-    </div >
+    </React.Fragment>
+
   );
 }
 

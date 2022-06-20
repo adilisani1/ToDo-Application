@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-main {
+  display: flex;
+  align-items: center;
+  background-color: coral;
+  padding: 0.5rem .5rem 0.5rem .5rem;
+}
+
+.navbar-main .logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-left: 80px;
+}
+
+.navbar-main ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-right: 80px;
+}
+
+.navbar-main li {
+  padding: 1rem .5rem 0 .5rem;
+}
+
+.navbar-main a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-main a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  bottom: -10%;
+  background-color: #fff;
+}
+
+.navbar-main a:hover {
+  color: #61472f;
+}
+
+.navbar-main a:hover::after {
+  width: 100%;
+  transition: 0.6s ease;
+}
+
+.main_header input {
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_header .btn {
+  background-color: #e04b14;
+  color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_header .btn:hover {
+  background-color: #ff3939;
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

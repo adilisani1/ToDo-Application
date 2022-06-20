@@ -1,0 +1,27 @@
+.main_header{
+    
+    input {
+        margin-bottom: 1rem;
+        width: 100%;
+        
+        justify-content: center;
+        align-items: center;
+    }
+   
+      .btn {
+        background-color: rgb(224, 75, 20);
+        color: #ffffff;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: rgb(255, 57, 57);
+            color: #fff;
+        }
+    }
+
+
+}
