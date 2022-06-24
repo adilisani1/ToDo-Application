@@ -1,27 +1,74 @@
-.main_header{
+.form-container{
     
     input {
-        margin-bottom: 1rem;
+    margin-bottom: 1rem;
         width: 100%;
-        
         justify-content: center;
         align-items: center;
     }
-   
-      .btn {
-        background-color: rgb(224, 75, 20);
-        color: #ffffff;
-        margin: 0 auto;
-        text-align: center;
+    .btn-g {
         display: flex;
+        text-align: center;
         justify-content: center;
         align-items: center;
+       
+    
+     .btn {
+            background-color: rgb(250, 137, 8);
+            color: #ffffff;
+            margin: 0.2rem;
 
-        &:hover {
-            background-color: rgb(255, 57, 57);
-            color: #fff;
+            &:hover {
+                background-color: rgb(11, 167, 5);
+                color: #fff;
+            }
+
+              &:nth-child(2) {
+                background-color: rgb(236, 33, 33);
+                
+                &:hover {
+                        background-color: rgb(180, 3, 3);
+                        color: #fff;
+                    }
+            }
         }
     }
+  
 
 
+}
+
+
+.list-todo{
+    list-style: none;
+    
+   
+  
+    
+
+    .todo-item {
+       font-size: 1.4rem;
+       color: #ffffff;
+       padding: 0.5rem 1rem 0.5rem 1rem;
+       margin-bottom: 20px;
+       background-color: rgb(250, 137, 8);
+       border-radius: 10px;
+
+        .fa-trash-can {
+            color: #ffffff;
+            margin: 15px 0 10px 0;
+            float: right;
+            cursor: pointer;
+            text-align: right;
+            text-decoration: none;  
+
+
+            &:hover {
+                color: rgb(15, 34, 53)
+            }
+        }
+       
+     
+  //  padding: 0.5rem 1rem 0.5rem 1rem;
+    }
 }

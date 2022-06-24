@@ -8,27 +8,23 @@
   display: flex;
   align-items: center;
   background-color: coral;
-  padding: 0.5rem .5rem 0.5rem .5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
-
 .navbar-main .logo {
   color: #fff;
   text-decoration: none;
   font-size: 2rem;
   margin-left: 80px;
 }
-
 .navbar-main ul {
   display: flex;
   align-items: center;
   list-style: none;
   margin-right: 80px;
 }
-
 .navbar-main li {
-  padding: 1rem .5rem 0 .5rem;
+  padding: 1rem 0.5rem 0 0.5rem;
 }
-
 .navbar-main a {
   color: #fff;
   text-decoration: none;
@@ -36,9 +32,8 @@
   font-weight: 500;
   position: relative;
 }
-
 .navbar-main a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 0;
@@ -46,35 +41,62 @@
   bottom: -10%;
   background-color: #fff;
 }
-
 .navbar-main a:hover {
-  color: #61472f;
+  color: rgb(97, 71, 47);
 }
-
 .navbar-main a:hover::after {
   width: 100%;
   transition: 0.6s ease;
 }
 
-.main_header input {
+.form-container input {
   margin-bottom: 1rem;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
-
-.main_header .btn {
-  background-color: #e04b14;
-  color: #ffffff;
-  margin: 0 auto;
-  text-align: center;
+.form-container .btn-g {
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
-
-.main_header .btn:hover {
-  background-color: #ff3939;
+.form-container .btn-g .btn {
+  background-color: rgb(250, 137, 8);
+  color: #ffffff;
+  margin: 0.2rem;
+}
+.form-container .btn-g .btn:hover {
+  background-color: rgb(11, 167, 5);
   color: #fff;
 }
-/*# sourceMappingURL=style.css.map */
+.form-container .btn-g .btn:nth-child(2) {
+  background-color: rgb(236, 33, 33);
+}
+.form-container .btn-g .btn:nth-child(2):hover {
+  background-color: rgb(180, 3, 3);
+  color: #fff;
+}
+
+.list-todo {
+  list-style: none;
+}
+.list-todo .todo-item {
+  font-size: 1.4rem;
+  color: #ffffff;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-bottom: 20px;
+  background-color: rgb(250, 137, 8);
+  border-radius: 10px;
+}
+.list-todo .todo-item .fa-trash-can {
+  color: #ffffff;
+  margin: 15px 0 10px 0;
+  float: right;
+  cursor: pointer;
+  text-align: right;
+  text-decoration: none;
+}
+.list-todo .todo-item .fa-trash-can:hover {
+  color: rgb(15, 34, 53);
+}/*# sourceMappingURL=style.css.map */

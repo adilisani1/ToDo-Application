@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import TodoForm from "./TodoForm";
 
 const TodoApp = () => {
 
@@ -13,31 +14,17 @@ const TodoApp = () => {
   }
 
   const [todos, setTodos] = useState(getLocalItems());
-
-  const [todoInput, setTodoInput] = useState('');
-
   const [todoId, setTodoId] = useState(4);
 
-  //Input Change Event
-  const todoChangeHandler = (event) => {
-    setTodoInput(event.target.value)
-  };
-
   //Add todos
-  const addTodo = (e) => {
-    e.preventDefault();
-
-    if (todoInput === '') {
-      return
-    }
+  const addTodo = (todo) => {
 
     setTodos([...todos, {
       id: todoId,
-      title: todoInput,
+      title: todo,
       isComplete: false,
     },]);
 
-    setTodoInput('');
     setTodoId(previousTodoId => previousTodoId + 1);
   }
 
@@ -47,6 +34,11 @@ const TodoApp = () => {
     setTodos([...todos].filter(todo => todo.id !== id))
   }
 
+
+  const clearTodo = () => {
+    setTodos([])
+  }
+
   //Save todos
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -54,36 +46,37 @@ const TodoApp = () => {
 
 
   return (
-    <div className="col-12 col-lg-7 shadow p-5  main_header">
+    <div className="col-12 col-lg-7 shadow p-5">
 
-      <h1>Todo</h1>
-      <p>Little todo app</p>
+      <h1 className="text-center text-muted">Todo App</h1>
 
-      <input
-        type="text"
-        className="form-control"
-        placeholder="What do you need to do?"
-        value={todoInput}
-        onChange={todoChangeHandler}
-      />
 
-      <button className="btn mb-3" onClick={addTodo}>
-        Add Todo
-      </button>
+      <TodoForm
+        addTodo={addTodo}
+        handleClearTodo={clearTodo} />
 
-      <table className="table">
 
+      <ul className="list-todo">
+        {todos.map(todo => (
+          <li className="todo-item">{todo.title}
+            <i class="fa-regular fa-trash-can fa-sm" onClick={() => deleteTodoHandler(todo.id)}></i>
+          </li>
+        ))}
+
+      </ul>
+
+      {/* <table className="table">
         <tbody>
 
           {todos.map(todo => (
+
             <tr key={todo.id}>
 
               <td>
-                <input
-                  type="checkbox" />
+                {todo.title}
               </td>
 
-              <td>{todo.title}</td>
+              <td></td>
 
               <td>
                 <button
@@ -93,11 +86,15 @@ const TodoApp = () => {
                   onClick={() => deleteTodoHandler(todo.id)}>
                 </button>
               </td>
+
             </tr>
           ))}
 
         </tbody>
-      </table>
+
+      </table> */}
+
+
 
 
     </div >
